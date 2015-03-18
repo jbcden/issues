@@ -30,6 +30,7 @@ defmodule Issues.TableFormatter do
 
     iex> list = [Enum.into([{"a", "1"}, {"b", "2"}, {"c", "3"}], HashDict.new),
     ...>        Enum.into([{"a", "4"}, {"b", "5"}, {"c", "6"}], HashDict.new)]
+
     iex> Issues.TableFormatter.split_into_columns(list, ["a", "b", "c"])
     [ ["1", "4"], ["2", "5"], ["3", "6"] ]
 
@@ -42,11 +43,15 @@ defmodule Issues.TableFormatter do
 
   @doc """
   Return a binary (string) version of our parameter.
+
   ## Examples
+
     iex> Issues.TableFormatter.printable("a")
     "a"
+
     iex> Issues.TableFormatter.printable(99)
     "99"
+
   """
   def printable(str) when is_binary(str), do: str
   def printable(str), do: to_string(str)
@@ -57,8 +62,10 @@ defmodule Issues.TableFormatter do
 
   ## Example
     iex> data = [ ["cat", "wombat", "elk"], ["mongoose", "ant", "gnu"]]
+
     iex> Issues.TableFormatter.widths_of(data)
     [ 6, 8 ]
+
   """
   def widths_of(columns) do
     for column <- columns, do: column |> map(&String.length/1) |> max
@@ -70,8 +77,10 @@ defmodule Issues.TableFormatter do
 
   ## Example
     iex> widths = [5,6,99]
+
     iex> Issues.TableFormatter.format_for(widths)
     "~-5s | ~-6s | ~-99s~n"
+
   """
   def format_for(column_widths) do
     map_join(column_widths, " | ", fn width -> "~-#{width}s" end) <> "~n"
@@ -83,8 +92,10 @@ defmodule Issues.TableFormatter do
 
   ## Example
     iex> widths = [5,6,9]
+
     iex> Issues.TableFormatter.separator(widths)
     "------+--------+----------"
+
   """
   def separator(column_widths) do
     map_join(column_widths, "-+-", fn width -> List.duplicate("-", width) end)

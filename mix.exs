@@ -30,7 +30,7 @@ defmodule Issues.Mixfile do
     [
       { :httpoison, "0.4.3" },
       { :jsx,       "~> 2.0" },
-      { :exdoc,     github: "elixir-lang/ex_doc" }
+      { :ex_doc,     github: "elixir-lang/ex_doc" }
     ]
   end
 
