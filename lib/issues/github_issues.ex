@@ -1,4 +1,5 @@
 defmodule Issues.GithubIssues do
+
   require Logger
 
   @user_agent [ {"User-agent", "Elixir jbcden@gmail.com"} ]
@@ -10,16 +11,18 @@ defmodule Issues.GithubIssues do
     |> HTTPoison.get(@user_agent)
     |> handle_response
   end
+
   def issues_url(user, project) do
     "#{@github_url}/repos/#{user}/#{project}/issues"
   end
-  def handle_response(%{status_code: 200, body: body}) do
-    Logger.info "Successful response"
+
+  def handle_response({ :ok, %{status_code: 200, body: body} }) do
+    Logger.info("Successful response")
     Logger.debug fn -> inspect(body) end
-    { :ok, :jsx.decode(body) }
+    { :ok, Poison.Parser.parse!(body) }
   end
-  def handle_response(%{status_code: status, body: body}) do
+  def handle_response({ __, %{status_code: status, body: body} }) do
     Logger.error "Error #{status} returned"
-    { :error, :jsx.decode(body) }
+    { :error, Poison.Parser.parse!(body) }
   end
 end

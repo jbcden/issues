@@ -1,51 +1,143 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html>
   <head>
-    <title>Issues.CLI</title>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
-    <link rel="stylesheet" href="css/elixir.css" type="text/css" media="screen" charset="utf-8" />
-    <script type="text/javascript" charset="utf-8">
-      relpath = '';
-      if (relpath != '') relpath += '/';
-    </script>
-
-    <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/highlight.pack.js"></script>
-    <script type="text/javascript" charset="utf-8">
-      hljs.initHighlightingOnLoad();
-      hljs.configure({languages: []}); //disable autodetect
-    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.12.0">
+    <title>Issues.CLI – Issues v0.0.1</title>
+    <link rel="stylesheet" href="dist/app-88251e7c81.css" />
+    
+    <script src="dist/sidebar_items.js"></script>
   </head>
+  <body data-type="modules">
 
-  <body>
-    <script type="text/javascript" charset="utf-8">
-      if (window.top.frames.main) document.body.className = 'frames';
-    </script>
+    <div class="main">
+<button class="sidebar-toggle">
+  <i class="icon-menu"></i>
+</button>
+<section class="sidebar">
 
-    <section id="content">
-      <div class="breadcrumbs">Issues v0.0.1 &rarr; <a href="overview.html">Overview</a> &rarr; <a href="Issues.html">Issues</a> &rarr; <a href="Issues.CLI.html">CLI</a></div>
+  
+  <a href="api-reference.html" class="sidebar-projectLink">
+    <div class="sidebar-projectDetails">
+      <h1 class="sidebar-projectName">
+        Issues
+      </h1>
+      <h2 class="sidebar-projectVersion">
+        v0.0.1
+      </h2>
+    </div>
+    
+  </a>
+
+  <div class="sidebar-search">
+    <i class="icon-search"></i>
+    <input type="text" class="sidebar-searchInput" placeholder="search" autocomplete="off" />
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+    
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+    
+
+    
+
+    
+  </ul>
+
+  <ul id="full-list" class="sidebar-fullList"></ul>
+  <div class="sidebar-noResults"></div>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+
       <h1>
+        <small class="visible-xs">Issues v0.0.1</small>
         Issues.CLI
+        
+        
+          <a href="https://github.com/jbcden/issues/blob/master/lib/issues/cli.ex#L1" title="View Source" class="view-source" rel="help">
+            <i class="icon-code"></i>
+          </a>
         
       </h1>
 
-      <ul class="summary_links">
-        
-          <li><a href="#summary">Summary</a></li>
-        
-        
-        
-          <li><a href="#functions_details">Functions</a></li>
-        
-        
-        
-      </ul>
-
       
         <section id="moduledoc" class="docstring">
-          <p>Handle the command line parsing and dispatch to the various functions that end up generating a table of the last <em>n</em> issues in a github project</p>
+          <p>Handle the command line parsing and the dispatch to
+the various functions that end up generating a
+table of the last <em>n</em> issues in a github project</p>
+
+        </section>
+      
+
+      
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <i class="icon-link"></i>
+            </a>
+            Summary
+          </h1>
+          
+
+          
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+    <div class="summary-row">
+  <div class="summary-signature">
+    <a href="#convert_to_list_of_maps/1">convert_to_list_of_maps(list)</a>
+  </div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#decode_response/1">decode_response(arg)</a>
+  </div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#main/1">main(argv)</a>
+  </div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#parse_args/1">parse_args(argv)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p><code class="inline">argv</code> can be -h or —help, which returns :help/</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#process/1">process(arg1)</a>
+  </div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#sort_into_ascending_order/1">sort_into_ascending_order(list_of_issues)</a>
+  </div>
+  
+</div>
+
+  </div>
+
+
+          
+
+          
 
         </section>
       
@@ -53,137 +145,127 @@
       
 
       
-        <h2 id="summary">Summary<span class="detail_header_links"><a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a></span></h2>
-        <table class="summary">
-          <tr>
-  <td class="summary_signature"><a href="#convert_to_list_of_hashdicts/1">convert_to_list_of_hashdicts(list)</a></td>
-  
-</tr>
-<tr>
-  <td class="summary_signature"><a href="#decode_response/1">decode_response(arg1)</a></td>
-  
-</tr>
-<tr>
-  <td class="summary_signature"><a href="#main/1">main(argv)</a></td>
-  
-</tr>
-<tr>
-  <td class="summary_signature"><a href="#parse_args/1">parse_args(argv)</a></td>
-  
-    <td class="summary_synopsis"><p><code>argv</code> can be -h or --help, which returns :help</p>
-</td>
-  
-</tr>
-<tr>
-  <td class="summary_signature"><a href="#process/1">process(arg1)</a></td>
-  
-</tr>
-<tr>
-  <td class="summary_signature"><a href="#sort_into_ascending_order/1">sort_into_ascending_order(list_of_issues)</a></td>
-  
-</tr>
-
-        </table>
-      
-
-      
-
-      
-        <section id="functions_details" class="details_list">
-          <h2>Functions</h2>
-          <section class="detail">
-  <div class="detail_header" id="convert_to_list_of_hashdicts/1">
-    <span class="signature"><strong>convert_to_list_of_hashdicts(list)</strong></span>
-    <div class="detail_header_links">
-      <span class="detail_type">(function)</span>
-      <a href="#convert_to_list_of_hashdicts/1" class="detail_link" title="Link to this function">#</a>
-      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
-    </div>
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <i class="icon-link"></i>
+            </a>
+            Functions
+          </h1>
+          <div class="detail" id="convert_to_list_of_maps/1">
+  <div class="detail-header">
+    <a href="#convert_to_list_of_maps/1" class="detail-link" title="Link to this function">
+      <i class="icon-link"></i>
+    </a>
+    <span class="signature">convert_to_list_of_maps(list)</span>
+    
+      <a href="https://github.com/jbcden/issues/blob/master/lib/issues/cli.ex#L40" class="view-source" rel="help" title="View Source">
+       <i class="icon-code"></i>
+     </a>
+    
+    
   </div>
   
   <section class="docstring">
     
   </section>
-  
-</section>
-<section class="detail">
-  <div class="detail_header" id="decode_response/1">
-    <span class="signature"><strong>decode_response(arg1)</strong></span>
-    <div class="detail_header_links">
-      <span class="detail_type">(function)</span>
-      <a href="#decode_response/1" class="detail_link" title="Link to this function">#</a>
-      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
-    </div>
+</div>
+<div class="detail" id="decode_response/1">
+  <div class="detail-header">
+    <a href="#decode_response/1" class="detail-link" title="Link to this function">
+      <i class="icon-link"></i>
+    </a>
+    <span class="signature">decode_response(arg)</span>
+    
+      <a href="https://github.com/jbcden/issues/blob/master/lib/issues/cli.ex#L45" class="view-source" rel="help" title="View Source">
+       <i class="icon-code"></i>
+     </a>
+    
+    
   </div>
   
   <section class="docstring">
     
   </section>
-  
-</section>
-<section class="detail">
-  <div class="detail_header" id="main/1">
-    <span class="signature"><strong>main(argv)</strong></span>
-    <div class="detail_header_links">
-      <span class="detail_type">(function)</span>
-      <a href="#main/1" class="detail_link" title="Link to this function">#</a>
-      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
-    </div>
+</div>
+<div class="detail" id="main/1">
+  <div class="detail-header">
+    <a href="#main/1" class="detail-link" title="Link to this function">
+      <i class="icon-link"></i>
+    </a>
+    <span class="signature">main(argv)</span>
+    
+      <a href="https://github.com/jbcden/issues/blob/master/lib/issues/cli.ex#L13" class="view-source" rel="help" title="View Source">
+       <i class="icon-code"></i>
+     </a>
+    
+    
   </div>
   
   <section class="docstring">
     
   </section>
-  
-</section>
-<section class="detail">
-  <div class="detail_header" id="parse_args/1">
-    <span class="signature"><strong>parse_args(argv)</strong></span>
-    <div class="detail_header_links">
-      <span class="detail_type">(function)</span>
-      <a href="#parse_args/1" class="detail_link" title="Link to this function">#</a>
-      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
-    </div>
+</div>
+<div class="detail" id="parse_args/1">
+  <div class="detail-header">
+    <a href="#parse_args/1" class="detail-link" title="Link to this function">
+      <i class="icon-link"></i>
+    </a>
+    <span class="signature">parse_args(argv)</span>
+    
+      <a href="https://github.com/jbcden/issues/blob/master/lib/issues/cli.ex#L60" class="view-source" rel="help" title="View Source">
+       <i class="icon-code"></i>
+     </a>
+    
+    
   </div>
   
   <section class="docstring">
-    <p><code>argv</code> can be -h or --help, which returns :help.</p>
-<p>Otherwise it is a github username, project name, and (optionally) the number of entries to format.</p>
-<p>Return a tuple of <code>{user, project, count}</code>, or <code>:help</code> if help was given.</p>
+    <p><code class="inline">argv</code> can be -h or —help, which returns :help/</p>
+<p>Otherwise it is a github user name, project name, and (optionally)
+the number of entries to format.</p>
+<p>Return a tuple of <code class="inline">{ user, project, count }~, or</code>:help` if help was given.
+
+</p>
 
   </section>
-  
-</section>
-<section class="detail">
-  <div class="detail_header" id="process/1">
-    <span class="signature"><strong>process(arg1)</strong></span>
-    <div class="detail_header_links">
-      <span class="detail_type">(function)</span>
-      <a href="#process/1" class="detail_link" title="Link to this function">#</a>
-      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
-    </div>
+</div>
+<div class="detail" id="process/1">
+  <div class="detail-header">
+    <a href="#process/1" class="detail-link" title="Link to this function">
+      <i class="icon-link"></i>
+    </a>
+    <span class="signature">process(arg1)</span>
+    
+      <a href="https://github.com/jbcden/issues/blob/master/lib/issues/cli.ex#L19" class="view-source" rel="help" title="View Source">
+       <i class="icon-code"></i>
+     </a>
+    
+    
   </div>
   
   <section class="docstring">
     
   </section>
-  
-</section>
-<section class="detail">
-  <div class="detail_header" id="sort_into_ascending_order/1">
-    <span class="signature"><strong>sort_into_ascending_order(list_of_issues)</strong></span>
-    <div class="detail_header_links">
-      <span class="detail_type">(function)</span>
-      <a href="#sort_into_ascending_order/1" class="detail_link" title="Link to this function">#</a>
-      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
-    </div>
+</div>
+<div class="detail" id="sort_into_ascending_order/1">
+  <div class="detail-header">
+    <a href="#sort_into_ascending_order/1" class="detail-link" title="Link to this function">
+      <i class="icon-link"></i>
+    </a>
+    <span class="signature">sort_into_ascending_order(list_of_issues)</span>
+    
+      <a href="https://github.com/jbcden/issues/blob/master/lib/issues/cli.ex#L35" class="view-source" rel="help" title="View Source">
+       <i class="icon-code"></i>
+     </a>
+    
+    
   </div>
   
   <section class="docstring">
     
   </section>
-  
-</section>
+</div>
 
         </section>
       
@@ -191,6 +273,24 @@
       
 
       
-    </section>
+          <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" rel="help" target="_blank">ExDoc</a> (v0.12.0),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+            </span>
+        </p>
+        <button class="night-mode-toggle" />
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  <script src="dist/app-21f1a20b9e.js"></script>
   </body>
 </html>
+
